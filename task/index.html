@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS Task</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+
+	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  	<script src="controllers/mainController.js"></script>
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body ng-app="task" ng-controller="myctrl">
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="brandline" href="#/">NxtLife Technologies</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="#/contacts"><span class="glyphicon glyphicon-user"></span> Contacts</a></li>
+        <li><a href="#/aboutus"><span class="glyphicon glyphicon-info-sign"></span> AboutUs</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+	<div ng-view></div>
+
+<br><br><br><br>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container" >
+    <h4 id="brandlinebottom">&copy; NxtLife Technologies</h4>
+  </div>
+</nav>
+
+
+</body>
+</html>

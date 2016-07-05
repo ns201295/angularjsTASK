@@ -1,0 +1,19 @@
+.form-group label span {
+  color: red;
+}
+
+.form-group textarea{
+  height: 300px;
+}
+
+#brandline , #brandlinebottom{
+  color: white;
+  text-align:center ;
+}
+
+h1 , h2 , #aboutus {
+  text-align:center ;
+}
+.mgr5{
+margin-right: 5px;
+}

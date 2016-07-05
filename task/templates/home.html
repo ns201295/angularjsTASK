@@ -1,0 +1,61 @@
+<div class="container">
+<h1><u>Contact Form</u></h1>
+<form role="form" name="myform">
+
+<div class="alert alert-danger" role="alert" ng-show="myform.name.$touched && myform.name.$pristine">Name should not be empty</div>
+<div class="alert alert-danger" role="alert" ng-show="user.comment.length > 300">Length of Comment should not be more than 300</div>
+<div class="alert alert-danger" role="alert" ng-show="myform.email.$touched && myform.email.$error.email">invalid email</div>
+<div class="alert alert-danger" role="alert" ng-show="myform.cn.$touched && (myform.cn.$error.minlength || myform.cn.$error.maxlength) ">Contact number should be of 10 digit</div>
+
+
+  <div class="form-group">
+    <label for="name"><span>*</span>Name:</label>
+    <input type="text" name="name" class="form-control" id="name" ng-model="user.name" required>
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="email"><span>*</span>Email:</label>
+    <input type="email" name="email"class="form-control" id="email" ng-model="user.email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="cn"><span>*</span>Contact No.:</label>
+    <input type="number" name="cn" ng-minlength="10" ng-maxlength="10" class="form-control" id="cn" ng-model="user.cn" required>
+  </div>
+
+  <div class="form-group">
+  <label for="gender"><span>*</span>Gender:</label>
+  <select class="form-control" name="gender" id="gender" ng-model="user.gender" required>
+  <option value="" selected disabled>Please select</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  </select>
+  </div>
+
+  <div class="form-group">
+    <label for="dob">Date of Birth:</label>
+    <input type="date" class="form-control" id="dob" ng-model="user.dob">
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Comments:</label>
+    <textarea class="form-control" placeholder="Should be less than 100 characters &#13;&#10;height 300px" id="comment" ng-model="user.comment"></textarea>
+  </div>
+
+
+ <button type="submit" class="btn btn-default" ng-click="submitf(user)" ng-hide="editmode"
+ ng-disabled= "myform.name.$error.required || myform.email.$error.email ||myform.email.$error.required|| myform.cn.$error.minlength || myform.cn.$error.maxlength || myform.cn.$error.required || myform.gender.$error.required || (user.comment.length > 100)"
+ >Submit</button>
+
+  <button type="submit" class="btn btn-default" ng-click="savef(user,$index)" ng-show="editmode"
+ ng-disabled= "myform.name.$error.required || myform.email.$error.email ||myform.email.$error.required|| myform.cn.$error.minlength || myform.cn.$error.maxlength || myform.cn.$error.required || myform.gender.$error.required || (user.comment.length > 100)"
+ >Save</button>
+ <button type="submit" class="btn btn-default" ng-click="cancelf()" ng-show="editmode">Cancel</button>
+</form>
+
+
+
+
+</div>
